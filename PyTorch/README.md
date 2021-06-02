@@ -1,7 +1,8 @@
-For f1_scores_pytorch(y, y_hat, device, for_mini_batch=False) function in F1_Scores.py:
-  If you just want to use micro and macro averaged f1 scores without mini batch, for_mini_batch argument must be False. 
-  But, if you want to use this funtion in training with mini batch, use the function following:
+# For f1_scores_pytorch(y, y_hat, device, for_mini_batch=False) function in F1_Scores.py:
+- If you just want to use micro and macro averaged f1 scores without mini batch, for_mini_batch argument must be False. 
+- But, if you want to use this funtion in training with mini batch, use the function following:
   
+```
   def train_one_epoch(...):
     batch_count = 0 // must be created to use the function
     epoch_fn = 0    // must be created to use the function
@@ -25,3 +26,4 @@ For f1_scores_pytorch(y, y_hat, device, for_mini_batch=False) function in F1_Sco
     micro_f1_scores = (2 * micro_recall * micro_precision) / (micro_recall + micro_presicion + 1e-8)
     epoch_macro_f1_scores = epoch_macro_f1_scores / batch_count
     return epoch_macro_f1_scores, micro_f1_scores, ...
+```
