@@ -21,7 +21,7 @@
             epoch_macro_f1_scores += macro
     
     # after first epoch
-    micro_recall = (epoch_tp) / (epoch_fn + epoch_tp + 1e-8)    // 1e-8 is using to avoid zero division
+    micro_recall = (epoch_tp) / (epoch_fn + epoch_tp + 1e-8)    # 1e-8 is using to avoid zero division
     micro_precision = (epoch_tp) / (epoch_fp + epoch_tp + 1e-8)
     micro_f1_scores = (2 * micro_recall * micro_precision) / (micro_recall + micro_presicion + 1e-8)
     epoch_macro_f1_scores = epoch_macro_f1_scores / batch_count
